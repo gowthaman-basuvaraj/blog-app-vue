@@ -1,18 +1,45 @@
 <script setup>
+import {useBlogsStore} from "./store/blogs.js";
+
+const blogStore = useBlogsStore()
+blogStore.fetchUsers()
+blogStore.fetchBlogs()
 </script>
 
 <template>
-  <h1>Hello App!</h1>
-  <p>
-    <!-- use the router-link component for navigation. -->
-    <!-- specify the link by passing the `to` prop. -->
-    <!-- `<router-link>` will render an `<a>` tag with the correct `href` attribute -->
-    <router-link to="/">Go to Home</router-link>
-    <router-link to="/about">Go to About</router-link>
-  </p>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Blogs App</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+              aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
   <!-- route outlet -->
   <!-- component matched by the route will render here -->
-  <router-view></router-view>
+  <div class="container">
+    <Suspense>
+      <router-view></router-view>
+    </Suspense>
+  </div>
 </template>
 
 <style scoped>
