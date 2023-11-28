@@ -1,9 +1,5 @@
 <script setup>
-import {useBlogsStore} from "./store/blogs.js";
 
-const blogStore = useBlogsStore()
-blogStore.fetchUsers()
-blogStore.fetchBlogs()
 </script>
 
 <template>
@@ -17,13 +13,13 @@ blogStore.fetchBlogs()
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <router-link to="/" active-class="active" class="nav-link">Home</router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <router-link to="/blogs" active-class="active" class="nav-link">Blogs</router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+            <router-link to="/users" active-class="active" class="nav-link">Users</router-link>
           </li>
         </ul>
         <form class="d-flex" role="search">
@@ -36,9 +32,14 @@ blogStore.fetchBlogs()
   <!-- route outlet -->
   <!-- component matched by the route will render here -->
   <div class="container">
-    <Suspense>
+    <suspense>
+      <!-- loading state via #fallback slot -->
+      <template #fallback>
+        Loading...
+      </template>
+
       <router-view></router-view>
-    </Suspense>
+    </suspense>
   </div>
 </template>
 

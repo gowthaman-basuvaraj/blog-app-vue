@@ -13,6 +13,7 @@ export const useBlogsStore = defineStore('blogs', () => {
     const userMap = ref({})
     const userPosts = ref({})
     const userComments = ref({})
+    const blogComments = ref({})
 
     const fetchBlogs = async () => {
         if (blogs.value.length > 0) return
@@ -50,6 +51,16 @@ export const useBlogsStore = defineStore('blogs', () => {
         }
         return userComments.value[id]
     }
+    const loadBlogComments = async (id) => {
+        if (!blogComments.value[id]) {
+            let r1 = await fetch(Constants.Blog.comments(id))
+            blogComments.value[id] = await r1.json()
+        }
+        return blogComments.value[id]
+    }
 
-    return {blogs, fetchBlogs, users, fetchUsers, loadUser, loadUserPosts, loadUserComments}
+    const getBlogs = () => blogs
+    const getUsers = () => users
+    return {blogs, fetchBlogs, users, fetchUsers, loadUser, loadUserPosts,
+        loadUserComments, loadBlogComments, getBlogs, getUsers}
 })

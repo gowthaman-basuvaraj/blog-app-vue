@@ -10,14 +10,14 @@ const comments = await loadUserComments(id.value)
 </script>
 
 <template>
-  <h1>User {{ user?.name }}</h1>
-  <div class="d-flex mt-3">
+  <h1>{{ user?.name }}</h1>
+  <div class="d-flex mt-5">
     <div>
       <h5>posts</h5>
       <div class="list-group">
-        <a v-for="p of posts" :key="p.id" class="list-group-item">
+        <router-link v-for="p of posts" :key="p.id" :to="{name: 'blog', params: {id: p.id}}" class="list-group-item">
           {{ p.title }}
-        </a>
+        </router-link>
       </div>
     </div>
     <div class="ms-2">
