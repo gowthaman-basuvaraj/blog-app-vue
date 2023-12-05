@@ -15,7 +15,7 @@ import constants from "../constants.js";
   </ul>
   <h2 class="my-4 text-black-50">The Application and The Assignment</h2>
   <div class="d-flex">
-    <div class="list-group">
+    <div class="list-group list-group-flush">
       <div class="list-group-item active">
         <h2>These are the list of API's</h2>
       </div>
@@ -76,7 +76,7 @@ import constants from "../constants.js";
       </div>
     </div>
     <div class="ms-2">
-      <div class="list-group">
+      <div class="list-group list-group-flush">
         <div class="list-group-item active">
           <h2>Assignment</h2>
         </div>
