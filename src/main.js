@@ -3,7 +3,7 @@ import './style.scss'
 import App from './App.vue'
 import HomePage from "./components/HomePage.vue";
 import UserPage from "./components/UserPage.vue";
-import {createRouter, createWebHashHistory} from "vue-router";
+import {createRouter, createWebHistory} from "vue-router";
 import {createPinia} from "pinia";
 import {BootstrapIconsPlugin} from 'bootstrap-icons-vue';
 import BlogsPage from "./components/BlogsPage.vue";
@@ -20,7 +20,7 @@ const routes = [
 ]
 const router = createRouter({
     // 4. Provide the history implementation to use. We are using the hash history for simplicity here.
-    history: createWebHashHistory(),
+    history: createWebHistory(),
     routes, // short for `routes: routes`
 })
 createApp(App)
