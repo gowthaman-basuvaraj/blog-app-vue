@@ -15,9 +15,22 @@ import constants from "../constants.js";
   </ul>
   <h2 class="my-4 text-black-50">The Application and The Assignment</h2>
   <div class="d-flex">
+    <div class="me-2">
+      <div class="list-group list-group-flush">
+        <div class="list-group-item active">
+          <h2>Assignment</h2>
+        </div>
+        <div class="list-group-item">Go through this application in detail, understand what has been done</div>
+        <div class="list-group-item">try to build, as much of this application as possible</div>
+        <div class="list-group-item">You can try to build same, less or more features</div>
+        <div class="list-group-item">you are free to use any tech/platform/language</div>
+        <div class="list-group-item">You are free to build a) webapp or b) mobile app or c)desktop app</div>
+        <div class="list-group-item">you are build SPA (react, vue etc...) or SSR (spring boot etc)</div>
+      </div>
+    </div>
     <div class="list-group list-group-flush">
       <div class="list-group-item active">
-        <h2>These are the list of API's</h2>
+        <h2>These are the list of API's, that you will have to use to build the Assignment</h2>
       </div>
       <div class="list-group-item list-group-item-success">Fetch All Blogs <br />
         <em>{{constants.Blog.all}}</em> <br />
@@ -73,19 +86,6 @@ import constants from "../constants.js";
       </div>
       <div class="list-group-item list-group-item-info">
         <em>Use Network Console to find any more API's that are being used</em>
-      </div>
-    </div>
-    <div class="ms-2">
-      <div class="list-group list-group-flush">
-        <div class="list-group-item active">
-          <h2>Assignment</h2>
-        </div>
-        <div class="list-group-item">Go through this application in detail, understand what has been done</div>
-        <div class="list-group-item">try to build, as much of this application as possible</div>
-        <div class="list-group-item">You can try to build same, less or more features</div>
-        <div class="list-group-item">you are free to use any tech/platform/language</div>
-        <div class="list-group-item">You are free to build a) webapp or b) mobile app or c)desktop app</div>
-        <div class="list-group-item">you are build SPA (react, vue etc...) or SSR (spring boot etc)</div>
       </div>
     </div>
   </div>
