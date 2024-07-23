@@ -13,11 +13,17 @@ const users = getUsers()
 <template>
 <h1 class="mb-3">Users</h1>
   <div class="list-group">
-    <router-link
-        v-for="u of users" :key="u.id"
-        :to="{name: 'user', params: {id: u.id}}" class="list-group-item">
-      {{u.name}}
-    </router-link>
+<div class="list-group-item d-flex justify-content-between"
+     v-for="u of users" :key="u.id"
+>
+  <div>
+    <span>{{u.name}}</span> <span class="ms-4">{{u.email}}</span>
+  </div>
+  <router-link
+      :to="{name: 'user', params: {id: u.id}}">
+    View Details
+  </router-link>
+</div>
   </div>
 </template>
 

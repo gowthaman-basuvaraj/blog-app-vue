@@ -26,6 +26,10 @@ import constants from "../constants.js";
         <div class="list-group-item">you are free to use any tech/platform/language</div>
         <div class="list-group-item">You are free to build a) webapp or b) mobile app or c)desktop app</div>
         <div class="list-group-item">you are build SPA (react, vue etc...) or SSR (spring boot etc)</div>
+        <div class="list-group-item active">
+          <h2>Bonus Points</h2>
+        </div>
+        <div class="list-group-item">Search & Sort Functions in Blogs and Users Page</div>
       </div>
     </div>
     <div class="list-group list-group-flush">
@@ -65,22 +69,22 @@ import constants from "../constants.js";
         <p class="my-2">the response will be array of users, have id, name, email, phone, website and username  </p>
       </div>
       <div class="list-group-item">Fetch Comments of a Blog , for a given id<br />
-        <em>{{constants.Blog.comments("id")}}</em> <br />
+        <em>{{constants.Blog.comments("{id}")}}</em> <br />
         <p class="my-0 text-black-50">example: To Fetch Comments of Blog with id - 2</p>
         <em>{{constants.Blog.comments("2")}}</em>
       </div>
       <div class="list-group-item list-group-item-dark">Fetch Details  of a user, for a given id<br />
-        <em>{{constants.User.id("id")}}</em> <br />
+        <em>{{constants.User.id("{id}")}}</em> <br />
         <p class="my-0 text-black-50">example: To Fetch Details of User with id - 3</p>
         <em>{{constants.User.id("3")}}</em>
       </div>
       <div class="list-group-item list-group-item-light">Fetch Comments Made by a user, for a given id<br />
-        <em>{{constants.User.comments("id")}}</em> <br />
+        <em>{{constants.User.comments("{id}")}}</em> <br />
         <p class="my-0 text-black-50">example: To Fetch Comments by User with id - 4</p>
         <em>{{constants.User.comments("4")}}</em>
       </div>
       <div class="list-group-item list-group-item-secondary">Fetch Blogs Created by a user, for a given id<br />
-        <em>{{constants.User.posts("id")}}</em> <br />
+        <em>{{constants.User.posts("{id}")}}</em> <br />
         <p class="my-0 text-black-50">example: To Fetch Blogs created by User with id - 5</p>
         <em>{{constants.User.posts("5")}}</em>
       </div>

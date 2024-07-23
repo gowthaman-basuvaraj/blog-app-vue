@@ -10,10 +10,23 @@ const comments = await loadUserComments(id.value)
 </script>
 
 <template>
-  <h1>{{ user?.name }}</h1>
+  <div class="d-flex flex-column">
+    <h1>Name: {{ user?.name }}</h1>
+    <b>UserName: {{ user?.username }}</b>
+    <b>EMail: {{ user?.email }}</b>
+    <b>Phone: {{ user?.phone }}</b>
+    <b>Web: <a>{{ user?.website }}</a></b>
+    <em>
+      Address:
+      {{user.address.street}}
+      {{user.address.suite}}
+      {{user.address.city}}
+      {{user.address.zipcode}}
+    </em>
+  </div>
   <div class="d-flex mt-5">
     <div>
-      <h5>posts</h5>
+      <h6>posts by {{user?.name}}</h6>
       <div class="list-group">
         <router-link v-for="p of posts" :key="p.id" :to="{name: 'blog', params: {id: p.id}}" class="list-group-item">
           {{ p.title }}
@@ -22,7 +35,7 @@ const comments = await loadUserComments(id.value)
     </div>
     <div class="ms-2">
 
-      <h6>comments</h6>
+      <h6>comments by {{user?.name}}</h6>
       <div class="list-group">
         <a v-for="p of comments" :key="p.id" class="list-group-item">
           {{ p.body }}
